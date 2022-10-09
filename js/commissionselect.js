@@ -15,30 +15,30 @@ document.addEventListener("alpine:init", () => {
         switch (this.body_part__select) {
           case "Fullbody":
             commission_price = 20;
-            shortcode = "fb-reg";
+            shortcode = "reg-fb";
             break;
           case "Halfbody":
             commission_price = 15;
-            shortcode = "hb-reg";
+            shortcode = "reg-hb";
             break;
           case "Icon":
             commission_price = 10;
-            shortcode = "ic-reg";
+            shortcode = "reg-ic";
             break;
         }
       } else if (this.commission_type__select === "MS Paint") {
         switch (this.body_part__select) {
           case "Fullbody":
             commission_price = 15;
-            shortcode = "fb-msp";
+            shortcode = "msp-fb";
             break;
           case "Halfbody":
             commission_price = 15;
-            shortcode = "hb-msp";
+            shortcode = "msp-hb";
             break;
           case "Icon":
             commission_price = 10;
-            shortcode = "ic-msp";
+            shortcode = "msp-ic";
             break;
         }
       }
