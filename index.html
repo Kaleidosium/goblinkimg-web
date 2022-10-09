@@ -29,23 +29,23 @@
 
 <!-- TODO(Kal): Get rid of Inline Styles! -->
 
-<body class="body--bg">
+<body class="body body--bg">
   <div class="body body--center-hv">
-    <div class="body body__grid-wrapper">
+    <div class="body body--grid-wrapper">
       <!-- Main Profile Window -->
-      <div class="body body__first-row">
+      <div class="body body__first-row 7css">
         <img src="assets/image/icon/icon--pet.png" id="desktop-buddy" alt="Desktop Buddy" width="500" height="500">
-        <div class="window window--color-neon-turquoise glass" style="width: 700px">
-          <div class="title-bar">
-            <div class="splitcontent">
-              <img class="flex-one" style="margin-right: 0.3rem" src="assets/image/icon/icon--amogus.png"
-                alt="Profile Window Icon" width="16" height="16">
+        <div class="window window__profile window-color--neon-turquoise glass 7css">
+          <div class="title-bar 7css">
+            <div class="--splitcontent">
+              <img class="window-icon --flex-one" src="assets/image/icon/icon--amogus.png" alt="Profile Window Icon"
+                width="16" height="16">
 
-              <div class="title-bar-text">Profile</div>
+              <div class="title-bar-text 7css">Profile</div>
 
             </div>
 
-            <div class="title-bar-controls">
+            <div class="title-bar-controls 7css">
               <button aria-label="Minimize"></button>
               <button aria-label="Maximize"></button>
               <button aria-label="Close"></button>
@@ -54,153 +54,160 @@
 
           <div class="window-body">
             <div class="window-body__wrapper">
-              <div class="short-bio short-bio--padding flex-left" style="align-items: center;">
-                <input onclick="openLink(musicLinks)" type="image" src="assets/image/icon/icon--goblinkimg.png"
-                  title="Open Random Song" alt="GoblinKimg's Avatar" width="100" height="100"
-                  style="min-width: 110px; max-width: 100%; height: auto;" />
-                <!-- TODO(Kal): Put this in a config -->
-                <div class="short-bio" style="margin: 0; padding-left: 1rem;">
-                  <h2 class="short-bio" style="margin: 0;">Cooper Penndragon</h2>
-                  <span class="short-bio">
-                    <p><i>NONBINARY (he/they/it/pup)</i></p>
-                  </span>
+              <div class="short-bio">
+                <div class="short-bio--padding --flex-left">
+                  <input class="short-bio__icon" onclick="openLink(musicLinks)" type="image"
+                    src="assets/image/icon/icon--goblinkimg.png" title="Open Random Song" alt="GoblinKimg's Avatar"
+                    width="100px" height="100px" />
+                  <!-- TODO(Kal): Put this in a config -->
+                  <div class="short-bio__header">
+                    <h2 class="short-bio__title">Cooper Penndragon</h2>
+                    <span class="short-bio__subtitle">
+                      <p><i>NONBINARY (he/they/it/pup)</i></p>
+                    </span>
+                  </div>
                 </div>
+
+                <!-- TODO(Kal): Put this in a config -->
+                <section class="tabs" x-data="tabsSelect()">
+                  <menu class="tabs__select" x-ref="tabsSelect" role="tablist" aria-label="Tabs Template">
+                    <button role="tab" aria-controls="tab--home" aria-selected="true">
+                      Home
+                    </button>
+                    <button role="tab" aria-controls="tab--byf">BYF</button>
+                    <button role="tab" aria-controls="tab--triggers">Triggers</button>
+                    <button role="tab" aria-controls="tab--interests">Interests</button>
+                    <button role="tab" aria-controls="tab--likes-hobbies">Likes and Hobbies</button>
+                    <button role="tab" aria-controls="tab--faq">FAQ</button>
+                  </menu>
+                  <article x-cloak role="tabpanel" id="tab--home">
+                    <p><b>WELCOME TO THE COOPZONE!!!!</b></p>
+                    <p> hai hiii!! my name is cooper, im an adult, autistic, and an artist! my birthday is july 25th! im
+                      polyamorous, pansexual, and on the asexual spectrum. currently in a relationship as well! im ok w
+                      roleplay, and i love receiving art of my ocs! feel free to click around, and im always down to
+                      meet
+                      new people!!</p>
+                    <p><a href="#guestbook-iframe">Sign my Guestbook!</a></p>
+                  </article>
+                  <!-- NOTE(Kal): For the config, make sure to implement HTML sanitisation/rendering!  -->
+                  <article x-cloak role="tabpanel" id="tab--interests" hidden>
+                    <p><b>Games:</b> OMORI,UNDERTALE,FNAF,MINECRAFT,SPLATOON, LEGEND OF ZELDA, PORTAL,MUSE DASH,NEEDY
+                      STREAMER
+                      OVERLOAD,OSU!,THE SIMS, TERRARIA</p>
+
+                    <p><b>Music:</b> VYLET PONY, LEMON DEMON, WEIRD AL,STEAM POWERED GIRRAFFE, KIKUO,TV
+                      GIRL,VERTIGOAWAY,WEEZER,THE
+                      SCARY JOKES,100GECS, BREAKCORE</p>
+
+                    <p>
+                      <b>Shows:</b> NEON GENESIS EVANGELION, MY LITLE PONY FIM, MLP EQUESTRIA GIRLS, MADOKA MAGIKA, TWIN
+                      PEAKS,
+                      SONIC SATAM, OURAN HIGHSCHOOL HOST CLUB, BOJACK HORSEMAN, CLANNAD, CLONE HIGH,HELLUVA BOSS
+                    </p>
+
+                    <p>
+                      <b>Other:</b> christory / CWC lore, early anime and internet culture, early 00s web design, foxes,
+                      beetles, deep sea crabs and squids
+                    </p>
+
+                  </article>
+                  <article x-cloak role="tabpanel" id="tab--likes-hobbies" hidden>
+                    <p><b>Likes:</b> energy drinks, soda, snacking all day, games and music, sleeping in, rainy days,
+                      calm
+                      nights
+                      with my cat and my wifey, GIRLS, m e n, coffee, eating out at cute little restaurants</p>
+
+                    <p><b>Hates:</b> probably ur mom LOLOLOLOLOLOLOLOLOLOLOLOL</p>
+
+                    <hr>
+
+                    <p>
+                      <b>Hobbies:</b> art, kandi, minecraft creative mode, watching long ass youtube doccumentaries, gay
+                      sex
+                    </p>
+
+                  </article>
+                  <article x-cloak role="tabpanel" id="tab--byf" hidden>
+                    <p>
+                      <b>BEFORE YOU FOLLOW!!</b>
+                    </p>
+                    <p>
+                      i'm an adult, so please be aware when youre interracting w/ me, or browsing my likes. tone
+                      indicators
+                      are really helpful! but pls dont overuse them qwq-- its ok to DM me, for commissions or just to
+                      chat, but please dont just say "hey"
+                    </p>
+                    <p><b>DO NOT INTERACT IF:</b></p>
+                    <ul>
+                      <li>common DNIs, the -ists and the -phobics lol</li>
+                      <li>intrested in starting fandom drama</li>
+                      <li>if you refuse to trigger tag</li>
+                      <li>if you deny the existence of genderfluid, asexual, nonbinary, agender lesbains</li>
+                      <li>anti-neo pronouns / neo genders, they arent hurting anyone dude</li>
+                      <li>please be respectful.</li>
+                    </ul>
+                  </article>
+                  <article x-cloak role="tabpanel" id="tab--triggers" hidden>
+                    <p><b>PLEASE TRIGGER TAG:</b></p>
+                    <ul>
+                      <li>war/brutality conversations</li>
+                      <li>SA allegations</li>
+                      <li>mouth/dental related injuries /gore</li>
+                      <li>child endangerment</li>
+                      <li>autism discourse</li>
+                      <li>lesbian discourse</li>
+                    </ul>
+                  </article>
+                  <article x-cloak role="tabpanel" id="tab--faq" hidden>
+                    <p>
+                      art tablet is an intous pro15, i draw in MS paint and paint tool sai and occasionally clip
+                      studio!! idk if theres anythign else i can say lololololol
+                    </p>
+                  </article>
+                </section>
               </div>
-
-              <!-- TODO(Kal): Put this in a config -->
-              <section x-data="tabsSelect()" class="tabs">
-                <menu x-ref="tabsSelect" role="tablist" aria-label="Tabs Template">
-                  <button role="tab" aria-controls="tab--home" aria-selected="true">
-                    Home
-                  </button>
-                  <button role="tab" aria-controls="tab--byf">BYF</button>
-                  <button role="tab" aria-controls="tab--triggers">Triggers</button>
-                  <button role="tab" aria-controls="tab--interests">Interests</button>
-                  <button role="tab" aria-controls="tab--likes-hobbies">Likes and Hobbies</button>
-                  <button role="tab" aria-controls="tab--faq">FAQ</button>
-                </menu>
-                <article x-cloak role="tabpanel" id="tab--home">
-                  <p><b>WELCOME TO THE COOPZONE!!!!</b></p>
-                  <p> hai hiii!! my name is cooper, im an adult, autistic, and an artist! my birthday is july 25th! im
-                    polyamorous, pansexual, and on the asexual spectrum. currently in a relationship as well! im ok w
-                    roleplay, and i love receiving art of my ocs! feel free to click around, and im always down to meet
-                    new people!!</p>
-                  <p><a href="#guestbook-iframe">Sign my Guestbook!</a></p>
-                </article>
-                <!-- NOTE(Kal): For the config, make sure to implement HTML sanitisation/rendering!  -->
-                <article x-cloak role="tabpanel" id="tab--interests" hidden>
-                  <p><b>Games:</b> OMORI,UNDERTALE,FNAF,MINECRAFT,SPLATOON, LEGEND OF ZELDA, PORTAL,MUSE DASH,NEEDY
-                    STREAMER
-                    OVERLOAD,OSU!,THE SIMS, TERRARIA</p>
-
-                  <p><b>Music:</b> VYLET PONY, LEMON DEMON, WEIRD AL,STEAM POWERED GIRRAFFE, KIKUO,TV
-                    GIRL,VERTIGOAWAY,WEEZER,THE
-                    SCARY JOKES,100GECS, BREAKCORE</p>
-
-                  <p>
-                    <b>Shows:</b> NEON GENESIS EVANGELION, MY LITLE PONY FIM, MLP EQUESTRIA GIRLS, MADOKA MAGIKA, TWIN
-                    PEAKS,
-                    SONIC SATAM, OURAN HIGHSCHOOL HOST CLUB, BOJACK HORSEMAN, CLANNAD, CLONE HIGH,HELLUVA BOSS
-                  </p>
-
-                  <p>
-                    <b>Other:</b> christory / CWC lore, early anime and internet culture, early 00s web design, foxes,
-                    beetles, deep sea crabs and squids
-                  </p>
-
-                </article>
-                <article x-cloak role="tabpanel" id="tab--likes-hobbies" hidden>
-                  <p><b>Likes:</b> energy drinks, soda, snacking all day, games and music, sleeping in, rainy days, calm
-                    nights
-                    with my cat and my wifey, GIRLS, m e n, coffee, eating out at cute little restaurants</p>
-
-                  <p><b>Hates:</b> probably ur mom LOLOLOLOLOLOLOLOLOLOLOLOL</p>
-
-                  <hr>
-
-                  <p>
-                    <b>Hobbies:</b> art, kandi, minecraft creative mode, watching long ass youtube doccumentaries, gay
-                    sex
-                  </p>
-
-                </article>
-                <article x-cloak role="tabpanel" id="tab--byf" hidden>
-                  <p>
-                    <b>BEFORE YOU FOLLOW!!</b>
-                  </p>
-                  <p>
-                    i'm an adult, so please be aware when youre interracting w/ me, or browsing my likes. tone
-                    indicators
-                    are really helpful! but pls dont overuse them qwq-- its ok to DM me, for commissions or just to
-                    chat, but please dont just say "hey"
-                  </p>
-                  <p><b>DO NOT INTERACT IF:</b></p>
-                  <ul>
-                    <li>common DNIs, the -ists and the -phobics lol</li>
-                    <li>intrested in starting fandom drama</li>
-                    <li>if you refuse to trigger tag</li>
-                    <li>if you deny the existence of genderfluid, asexual, nonbinary, agender lesbains</li>
-                    <li>anti-neo pronouns / neo genders, they arent hurting anyone dude</li>
-                    <li>please be respectful.</li>
-                  </ul>
-                </article>
-                <article x-cloak role="tabpanel" id="tab--triggers" hidden>
-                  <p><b>PLEASE TRIGGER TAG:</b></p>
-                  <ul>
-                    <li>war/brutality conversations</li>
-                    <li>SA allegations</li>
-                    <li>mouth/dental related injuries /gore</li>
-                    <li>child endangerment</li>
-                    <li>autism discourse</li>
-                    <li>lesbian discourse</li>
-                  </ul>
-                </article>
-                <article x-cloak role="tabpanel" id="tab--faq" hidden>
-                  <p>art tablet is an intous pro15, i draw in MS paint and paint tool sai and occasionally clip studio!!
-                    idk
-                    if theres anythign else i can say lololololol</p>
-                </article>
-              </section>
             </div>
           </div>
           <!-- TODO(Kal): Put this in a config -->
-          <div class="status-bar">
-            <p class="status-bar-field">Commissions: Open</p>
-            <p class="status-bar-field">Trades: Closed</p>
-            <p class="status-bar-field">Customs: Open</p>
+          <div class="status-bar 7css">
+            <p class="status-bar-field 7css">Commissions: Open</p>
+            <p class="status-bar-field 7css">Trades: Closed</p>
+            <p class="status-bar-field 7css">Customs: Open</p>
           </div>
         </div>
       </div>
 
-      <div class="body body__second-row" style="width: 45vw">
+      <div class="body body__second-row 7css">
         <!-- Links Window -->
-        <div class="body--flex-item">
-          <div class="window window--color-neon-turquoise glass">
-            <div class="title-bar">
-              <div class="splitcontent">
-                <img class="flex-one" style="margin-right: 0.3rem" src="assets/image/icon/icon--links.png"
-                  alt="Links Window Icon" width="16" height="16">
-                <div class="title-bar-text">My Links</div>
+        <div class="--flex-item">
+          <div class="window window-color--neon-turquoise glass 7css">
+            <div class="title-bar 7css">
+              <div class="--splitcontent">
+                <img class="window-icon --flex-one" src="assets/image/icon/icon--links.png" alt="Links Window Icon"
+                  width="16" height="16">
+                <div class="title-bar-text 7css">My Links</div>
               </div>
-              <div class="title-bar-controls">
+              <div class="title-bar-controls 7css">
                 <button aria-label="Minimize"></button>
                 <button aria-label="Maximize"></button>
                 <button aria-label="Close"></button>
               </div>
             </div>
-            <div class="window-body">
+            <div class="window-body 7css">
               <!-- FIXME(Kal): Inline Styles https://stackoverflow.com/questions/63699559/how-to-make-a-responsive-horizontal-list -->
-              <ul style="display: flex; flex-direction: row; flex-wrap: wrap; max-width: 15vw; max-height: 10vh;">
-                <li style="min-width: 5rem"><a href="https://twitter.com/goblinkimg">Twitter</a></li>
-                <li style="min-width: 5rem"><a href="https://www.twitch.tv/goblinkimg">Twitch</a></li>
-                <li style="min-width: 5rem"><a href="https://www.tiktok.com/@goblinkimg">TikTok</a></li>
-                <li style="min-width: 5rem"><a href="https://discord.gg/ACc7Jfg">Discord</a></li>
-                <li style="min-width: 5rem"><a href="https://www.patreon.com/goblinkimg">Patreon</a></li>
-                <li style="min-width: 5rem"><a href="https://toyhou.se/goblinkimg">TOYHOUSE</a></li>
-                <li style="min-width: 5rem"><a href="https://www.redbubble.com/people/plushdarling/shop">RedBubble</a>
+              <ul class="window-links">
+                <li class="window-links__link-item"><a href="https://twitter.com/goblinkimg">Twitter</a></li>
+                <li class="window-links__link-item"><a href="https://www.twitch.tv/goblinkimg">Twitch</a></li>
+                <li class="window-links__link-item"><a href="https://www.tiktok.com/@goblinkimg">TikTok</a></li>
+                <li class="window-links__link-item"><a href="https://discord.gg/ACc7Jfg">Discord</a></li>
+                <li class="window-links__link-item"><a href="https://www.patreon.com/goblinkimg">Patreon</a></li>
+                <li class="window-links__link-item"><a href="https://toyhou.se/goblinkimg">TOYHOUSE</a></li>
+                <li class="window-links__link-item"><a
+                    href="https://www.redbubble.com/people/plushdarling/shop">RedBubble</a>
                 </li>
-                <li style="min-width: 5rem"><a href="https://www.pinterest.com/dokikeropi/_saved/">Pinterest</a></li>
-                <li style="min-width: 5rem"><a
+                <li class="window-links__link-item"><a href="https://www.pinterest.com/dokikeropi/_saved/">Pinterest</a>
+                </li>
+                <li class="window-links__link-item"><a
                     href="https://open.spotify.com/user/351xve2kujns3qd1piwp26hln?si=64bf16965e484102&nd=1">Spotify</a>
                 </li>
               </ul>
@@ -209,7 +216,7 @@
         </div>
 
         <!-- Icons -->
-        <div class="link-icon body--flex-item">
+        <div class="link-icon --flex-item">
           <a href="https://toyhou.se/goblinkimg/art">
             <img class="link-icon__item" src="assets/image/icon/icon--gallery-folder.png" title="View Art Gallery"
               alt="Art Gallery Icon" width="80" height="80">
@@ -218,71 +225,72 @@
             <img class="link-icon__item" src="assets/image/icon/icon--commission-info.png" title="View Commission Info"
               alt="Commission Info Icon" width="80" height="80">
           </a>
-          <input onclick="openLink(funLinks)" type="image" src="assets/image/icon/icon--party-hat.png"
-            title="Go to a fun website" alt="Fun Websites Icon" width="80" height="80">
+          <input class="link-icon__item" onclick="openLink(funLinks)" type="image"
+            src="assets/image/icon/icon--party-hat.png" title="Go to a fun website" alt="Fun Websites Icon" width="80"
+            height="80">
           <a href="#behind-the-site">
             <img class="link-icon__item" src="assets/image/icon/icon--behind-the-site.png"
               title="About the site's creation" alt="Site's Creation Icon" width="80" height="80">
           </a>
         </div>
         <!-- Commission Info -->
-        <div class="window window--color-neon-turquoise is-bright glass" id="commission-info" role="dialog"
-          aria-labelledby="dialog-title" style="width: 600px">
-          <div class="title-bar">
-            <div class="splitcontent">
-              <img class="flex-one" style="margin-right: 0.3rem" src="assets/image/icon/icon--commission-info.png"
+        <div class="window window__commission-info window-color-neon-turquoise is-bright glass 7css"
+          id="commission-info" role="dialog" aria-labelledby="dialog-title">
+          <div class="title-bar 7css">
+            <div class="--splitcontent">
+              <img class="window-icon --flex-one" src="assets/image/icon/icon--commission-info.png"
                 alt="Commission Info Window Icon" width="16" height="16">
-              <div class="title-bar-text" id="dialog-title">Commission Info</div>
+              <div class="title-bar-text 7css" id="dialog-title">Commission Info</div>
             </div>
-            <div class="title-bar-controls">
+            <div class="title-bar-controls 7css">
               <button aria-label="Close" onclick="history.back()"></button>
             </div>
           </div>
           <!-- TODO(Kal): Put this in a config -->
-          <div class="window-body" x-data="commissionSelect">
-            <div class="splitcontent">
-              <div>
-                <fieldset class="fieldset__commission-body-part-select">
-                  <div class="field-row">Select body part type:</div>
-                  <div class="field-row">
+          <div class=" window-body 7css" x-data="commissionSelect">
+            <div class="--splitcontent">
+              <div class="fieldset__commission-options">
+                <fieldset class="fieldset-options__commission-body-part-select">
+                  <div class="field-row 7css">Select body part type:</div>
+                  <div class="field-row 7css">
                     <input x-model="body_part__select" id="radio-fullbody" type="radio" value="Fullbody"
                       name="commission__body-part" autocomplete="off">
                     <label for="radio-fullbody">Fullbody</label>
                   </div>
-                  <div class="field-row">
+                  <div class="field-row 7css">
                     <input x-model="body_part__select" id="radio-halfbody" type="radio" value="Halfbody"
                       name="commission__body-part" autocomplete="off">
                     <label for="radio-halfbody">Halfbody</label>
                   </div>
-                  <div class="field-row">
+                  <div class="field-row 7css">
                     <input x-model="body_part__select" id="radio-icon" type="radio" value="Icon"
                       name="commission__body-part" autocomplete="off" checked="checked">
                     <label for="radio-icon">Icon</label>
                   </div>
                 </fieldset>
-                <fieldset class="fieldset__commission-type-select">
-                  <div class="field-row">Select commission type:</div>
-                  <div class="field-row">
+                <fieldset class="fieldset-options__commission-type-select">
+                  <div class="field-row 7css">Select commission type:</div>
+                  <div class="field-row 7css">
                     <input x-model="commission_type__select" id="radio-regular" type="radio" value="Regular (SAI)"
                       name="commission__type" autocomplete="off" checked="checked">
                     <label for="radio-regular">Regular (SAI)</label>
                   </div>
-                  <div class="field-row">
+                  <div class="field-row 7css">
                     <input x-model="commission_type__select" id="radio-mspaint" type="radio" value="MS Paint"
                       name="commission__type" autocomplete="off">
                     <label for="radio-mspaint">MS Paint</label>
                   </div>
                 </fieldset>
-                <fieldset class="fieldset__multi_character-select" style="margin: 0">
-                  <div class="field-row">Do you want multiple characters?</div>
-                  <div class="field-row">
+                <fieldset class="fieldset-options__multi_character-select">
+                  <div class="field-row 7css">Do you want multiple characters?</div>
+                  <div class="field-row 7css">
                     <input x-model="multi_character__select" id="checkbox-multiple" type="checkbox" autocomplete="off">
                     <label for="checkbox-multiple">I want multiple characters</label>
                   </div>
                 </fieldset>
               </div>
-              <div class="slideshow-container" x-data="slideshow" x-timeout:2000="changeSlides">
-                <img :src="changeSlides" style="height: 20em;" />
+              <div class="slideshow-container" x-data="slideshow" x-timeout:1500="changeSlides">
+                <img :src="changeSlides" class="image-slides" />
               </div>
             </div>
 
@@ -293,30 +301,30 @@
               <span x-text="commissionInfo.commission_price"></span>USD
             </p>
           </div>
-          <footer style="text-align: right">
+          <footer class="window-commission-info --align-right">
             <button onclick="history.back()">OK</button>
           </footer>
         </div>
         <!-- Behind the Site -->
-        <div class="window window--color-neon-turquoise is-bright glass" id="behind-the-site" role="dialog"
-          aria-labelledby="dialog-title" style="width: 600px">
-          <div class="title-bar">
-            <div class="splitcontent">
-              <img class="flex-one" style="margin-right: 0.3rem" src="assets/image/icon/icon--behind-the-site.png"
+        <div class="window window__behind-the-site window-color-neon-turquoise is-bright glass 7css"
+          id="behind-the-site" role="dialog" aria-labelledby="dialog-title">
+          <div class="title-bar 7css">
+            <div class="--splitcontent">
+              <img class="window-icon --flex-one" src="assets/image/icon/icon--behind-the-site.png"
                 alt="Behind the Site Window Icon" width="16" height="16">
-              <div class="title-bar-text" id="dialog-title">Behind the Site</div>
+              <div class="title-bar-text 7css" id="dialog-title">Behind the Site</div>
             </div>
-            <div class="title-bar-controls">
+            <div class="title-bar-controls 7css">
               <button aria-label="Close" onclick="history.back()"></button>
             </div>
           </div>
-          <div class="window-body">
+          <div class="window-body 7css">
             <p>
               This website was created by Kaleidosium in her
               spare time with Cooper's feedback and cooperation.
             </p>
-            <div class="splitcontent">
-              <div class="flex-one">
+            <div class="--splitcontent">
+              <div class="--flex-one">
                 <p>
                   The following frameworks and libraries were used:
                 </p>
@@ -332,7 +340,10 @@
                   </li>
                 </ul>
                 <p>
-                  Special thanks to the contributors of those libraries, And also to @pixel_brush and @ashie404.
+                  I give a huge thanks to the contributors of those libraries.
+                </p>
+                <p>
+                  Special thanks to @pixel_brush and @ashie404 for inspiring parts of this website.
                 </p>
               </div>
               <span>
@@ -342,29 +353,29 @@
               </span>
             </div>
           </div>
-          <footer style="text-align: right">
+          <footer class="window-commission-info --align-right">
             <button onclick="history.back()">OK</button>
           </footer>
         </div>
         <!-- Guestbook -->
-        <div class="window window--color-neon-turquoise is-bright glass" id="guestbook-iframe" role="dialog"
-          aria-labelledby="dialog-title">
-          <div class="title-bar">
-            <div class="splitcontent">
-              <img class="flex-one" style="margin-right: 0.3rem" src="assets/image/icon/icon--guestbook.png"
+        <div class="window window-guestbook window-color-neon-turquoise is-bright glass 7css" id="guestbook-iframe"
+          role="dialog" aria-labelledby="dialog-title">
+          <div class="title-bar 7css">
+            <div class="--splitcontent">
+              <img class="window-icon --flex-one" src="assets/image/icon/icon--guestbook.png"
                 alt="Guestbook Window Icon" width="16" height="16">
-              <div class="title-bar-text" id="dialog-title">Guestbook</div>
+              <div class="title-bar-text 7css" id="dialog-title">Guestbook</div>
             </div>
-            <div class="title-bar-controls">
+            <div class="title-bar-controls 7css">
               <button aria-label="Close" onclick="history.back()"></button>
             </div>
           </div>
-          <div class="window-body">
-            <iframe id="inlineFrameGuestbook" title="Guestbook" width="500px" height="500px"
-              style="text-rendering: optimizeLegibility;" src="https://goblincave.123guestbook.com/">
+          <div class="window-body 7css">
+            <iframe id="inline-frame-guestbook" title="Guestbook" width="500px" height="500px"
+              src="https://goblincave.123guestbook.com/">
             </iframe>
           </div>
-          <footer style="text-align: right">
+          <footer class="window-guestbook --align-right 7css">
             <button onclick="history.back()">OK</button>
           </footer>
         </div>

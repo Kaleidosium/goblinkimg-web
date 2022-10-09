@@ -17,12 +17,20 @@ center {
   margin: 0 auto;
 }
 
-.flex-center {
+.--align-right {
+  text-align: right;
+}
+
+.--flex-item {
+  display: flex;
+}
+
+.--flex-center {
   display: flex;
   justify-content: center;
 }
 
-.flex-left {
+.--flex-left {
   display: flex;
   justify-content: left;
 }
@@ -39,7 +47,7 @@ center {
   margin: auto;
 }
 
-.body__grid-wrapper {
+.body--grid-wrapper {
   display: inline-grid;
   grid-column-gap: 0;
   grid-row-gap: 1.5rem;
@@ -56,20 +64,55 @@ center {
 
 .body__second-row {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.body--flex-item {
-  display: flex;
+  width: 700px;
 }
 
 .body--padding {
   padding: 5rem 0;
 }
 
+.short-bio {
+  align-items: center;
+}
+
+.short-bio__icon {
+  min-width: 110px;
+  max-width: 100%;
+  height: auto;
+}
+
+.short-bio__header {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.short-bio__title {
+  margin: 0;
+}
+
 .short-bio--padding {
-  padding: 1rem 0;
+  padding-bottom: 1rem;
+}
+
+.window-icon {
+  margin-right: 0.3rem;
+}
+
+.window__profile {
+  width: 700px;
+}
+
+.window-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 15vw;
+  max-height: 10vh;
+}
+
+.window-links__link-item {
+  min-width: 5rem;
 }
 
 .link-icon {
@@ -83,30 +126,41 @@ center {
   margin: 0 12px;
 }
 
-.window--color-neon-turquoise::before,
-.window--color-neon-turquoise > .title-bar {
+.window-color--neon-turquoise::before,
+.window-color--neon-turquoise > .title-bar {
   background-color: #61fad5;
 }
 
-.splitcontent {
+.--splitcontent {
   display: flex;
   align-content: right;
 }
 
-.splitcontent .flex-one {
+.--splitcontent .--flex-one {
   flex: 1;
 }
 
-/* Slideshow container */
+.fieldset-options__multi_character-select {
+  margin: 0;
+}
+
+.image-slides {
+  height: 20em;
+  width: 100%;
+}
+
+.window__commission-info {
+  width: 600px;
+}
+
+.window__behind-the-site {
+  width: 670px;
+}
+
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
-}
-
-/* Hide the images by default */
-.image-slides {
-  display: none;
 }
 
 .numbertext {
@@ -117,8 +171,12 @@ center {
   position: relative;
   padding: 0;
   z-index: 2;
-  max-height: 16vh; 
+  max-height: 16vh;
   width: auto;
   left: 5vw;
   top: 1vh;
+}
+
+#inline-frame-guestbook {
+  text-rendering: optimizeLegibility;
 }
