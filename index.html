@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <meta name="description" content="" />
+  <meta property="og:title" content="GoblinKimg" />
+  <meta property="og:url" content="" />
+  <meta property="og:description" content="" /> -->
+
+  <!-- Basic Info and Favicon -->
+  <title>GoblinKimg</title>
+  <link rel="shortcut-icon" href="favicon.ico">
+
+  <!-- External JS and CSS -->
+  <script defer src="https://unpkg.com/@victoryoalli/alpinejs-timeout@1.0.0/dist/timeout.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/7.css" />
+
+  <!-- Internal JS and CSS -->
+  <script src="js/tabsselect.js"></script>
+  <script src="js/commissionselect.js"></script>
+  <script src="js/openlink.js"></script>
+  <script src="js/slideshow.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<!-- TODO(Kal): Get rid of Inline Styles! -->
+
+<body class="body--bg">
+  <div class="body body--center-hv">
+    <div class="body body__grid-wrapper">
+      <!-- Main Profile Window -->
+      <div class="body body__first-row">
+        <img src="assets/image/icon/icon--pet.png" id="desktop-buddy" alt="Desktop Buddy" width="500" height="500">
+        <div class="window window--color-neon-turquoise glass" style="width: 700px">
+          <div class="title-bar">
+            <div class="splitcontent">
+              <img class="flex-one" style="margin-right: 0.3rem" src="assets/image/icon/icon--amogus.png"
+                alt="Profile Window Icon" width="16" height="16">
+
+              <div class="title-bar-text">Profile</div>
+
+            </div>
+
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Maximize"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+
+          <div class="window-body">
+            <div class="window-body__wrapper">
+              <div class="short-bio short-bio--padding flex-left" style="align-items: center;">
+                <input onclick="openLink(musicLinks)" type="image" src="assets/image/icon/icon--goblinkimg.png"
+                  title="Open Random Song" alt="GoblinKimg's Avatar" width="100" height="100"
+                  style="min-width: 110px; max-width: 100%; height: auto;" />
+                <!-- TODO(Kal): Put this in a config -->
+                <div class="short-bio" style="margin: 0; padding-left: 1rem;">
+                  <h2 class="short-bio" style="margin: 0;">Cooper Penndragon</h2>
+                  <span class="short-bio">
+                    <p><i>NONBINARY (he/they/it/pup)</i></p>
+                  </span>
+                </div>
+              </div>
+
+              <!-- TODO(Kal): Put this in a config -->
+              <section x-data="tabsSelect()" class="tabs">
+                <menu x-ref="tabsSelect" role="tablist" aria-label="Tabs Template">
+                  <button role="tab" aria-controls="tab--home" aria-selected="true">
+                    Home
+                  </button>
+                  <button role="tab" aria-controls="tab--byf">BYF</button>
+                  <button role="tab" aria-controls="tab--triggers">Triggers</button>
+                  <button role="tab" aria-controls="tab--interests">Interests</button>
+                  <button role="tab" aria-controls="tab--likes-hobbies">Likes and Hobbies</button>
+                  <button role="tab" aria-controls="tab--faq">FAQ</button>
+                </menu>
+                <article x-cloak role="tabpanel" id="tab--home">
+                  <p><b>WELCOME TO THE COOPZONE!!!!</b></p>
+                  <p> hai hiii!! my name is cooper, im an adult, autistic, and an artist! my birthday is july 25th! im
+                    polyamorous, pansexual, and on the asexual spectrum. currently in a relationship as well! im ok w
+                    roleplay, and i love receiving art of my ocs! feel free to click around, and im always down to meet
+                    new people!!</p>
+                  <p><a href="#guestbook-iframe">Sign my Guestbook!</a></p>
+                </article>
+                <!-- NOTE(Kal): For the config, make sure to implement HTML sanitisation/rendering!  -->
+                <article x-cloak role="tabpanel" id="tab--interests" hidden>
+                  <p><b>Games:</b> OMORI,UNDERTALE,FNAF,MINECRAFT,SPLATOON, LEGEND OF ZELDA, PORTAL,MUSE DASH,NEEDY
+                    STREAMER
+                    OVERLOAD,OSU!,THE SIMS, TERRARIA</p>
+
+                  <p><b>Music:</b> VYLET PONY, LEMON DEMON, WEIRD AL,STEAM POWERED GIRRAFFE, KIKUO,TV
+                    GIRL,VERTIGOAWAY,WEEZER,THE
+                    SCARY JOKES,100GECS, BREAKCORE</p>
+
+                  <p>
+                    <b>Shows:</b> NEON GENESIS EVANGELION, MY LITLE PONY FIM, MLP EQUESTRIA GIRLS, MADOKA MAGIKA, TWIN
+                    PEAKS,
+                    SONIC SATAM, OURAN HIGHSCHOOL HOST CLUB, BOJACK HORSEMAN, CLANNAD, CLONE HIGH,HELLUVA BOSS
+                  </p>
+
+                  <p>
+                    <b>Other:</b> christory / CWC lore, early anime and internet culture, early 00s web design, foxes,
+                    beetles, deep sea crabs and squids
+                  </p>
+
+                </article>
+                <article x-cloak role="tabpanel" id="tab--likes-hobbies" hidden>
+                  <p><b>Likes:</b> energy drinks, soda, snacking all day, games and music, sleeping in, rainy days, calm
+                    nights
+                    with my cat and my wifey, GIRLS, m e n, coffee, eating out at cute little restaurants</p>
+
+                  <p><b>Hates:</b> probably ur mom LOLOLOLOLOLOLOLOLOLOLOLOL</p>
+
+                  <hr>
+
+                  <p>
+                    <b>Hobbies:</b> art, kandi, minecraft creative mode, watching long ass youtube doccumentaries, gay
+                    sex
+                  </p>
+
+                </article>
+                <article x-cloak role="tabpanel" id="tab--byf" hidden>
+                  <p>
+                    <b>BEFORE YOU FOLLOW!!</b>
+                  </p>
+                  <p>
+                    i'm an adult, so please be aware when youre interracting w/ me, or browsing my likes. tone
+                    indicators
+                    are really helpful! but pls dont overuse them qwq-- its ok to DM me, for commissions or just to
+                    chat, but please dont just say "hey"
+                  </p>
+                  <p><b>DO NOT INTERACT IF:</b></p>
+                  <ul>
+                    <li>common DNIs, the -ists and the -phobics lol</li>
+                    <li>intrested in starting fandom drama</li>
+                    <li>if you refuse to trigger tag</li>
+                    <li>if you deny the existence of genderfluid, asexual, nonbinary, agender lesbains</li>
+                    <li>anti-neo pronouns / neo genders, they arent hurting anyone dude</li>
+                    <li>please be respectful.</li>
+                  </ul>
+                </article>
+                <article x-cloak role="tabpanel" id="tab--triggers" hidden>
+                  <p><b>PLEASE TRIGGER TAG:</b></p>
+                  <ul>
+                    <li>war/brutality conversations</li>
+                    <li>SA allegations</li>
+                    <li>mouth/dental related injuries /gore</li>
+                    <li>child endangerment</li>
+                    <li>autism discourse</li>
+                    <li>lesbian discourse</li>
+                  </ul>
+                </article>
+                <article x-cloak role="tabpanel" id="tab--faq" hidden>
+                  <p>art tablet is an intous pro15, i draw in MS paint and paint tool sai and occasionally clip studio!!
+                    idk
+                    if theres anythign else i can say lololololol</p>
+                </article>
+              </section>
+            </div>
+          </div>
+          <!-- TODO(Kal): Put this in a config -->
+          <div class="status-bar">
+            <p class="status-bar-field">Commissions: Open</p>
+            <p class="status-bar-field">Trades: Closed</p>
+            <p class="status-bar-field">Customs: Open</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="body body__second-row" style="width: 45vw">
+        <!-- Links Window -->
+        <div class="body--flex-item">
+          <div class="window window--color-neon-turquoise glass">
+            <div class="title-bar">
+              <div class="splitcontent">
+                <img class="flex-one" style="margin-right: 0.3rem" src="assets/image/icon/icon--links.png"
+                  alt="Links Window Icon" width="16" height="16">
+                <div class="title-bar-text">My Links</div>
+              </div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body">
+              <!-- FIXME(Kal): Inline Styles https://stackoverflow.com/questions/63699559/how-to-make-a-responsive-horizontal-list -->
+              <ul style="display: flex; flex-direction: row; flex-wrap: wrap; max-width: 15vw; max-height: 10vh;">
+                <li style="min-width: 5rem"><a href="https://twitter.com/goblinkimg">Twitter</a></li>
+                <li style="min-width: 5rem"><a href="https://www.twitch.tv/goblinkimg">Twitch</a></li>
+                <li style="min-width: 5rem"><a href="https://www.tiktok.com/@goblinkimg">TikTok</a></li>
+                <li style="min-width: 5rem"><a href="https://discord.gg/ACc7Jfg">Discord</a></li>
+                <li style="min-width: 5rem"><a href="https://www.patreon.com/goblinkimg">Patreon</a></li>
+                <li style="min-width: 5rem"><a href="https://toyhou.se/goblinkimg">TOYHOUSE</a></li>
+                <li style="min-width: 5rem"><a href="https://www.redbubble.com/people/plushdarling/shop">RedBubble</a>
+                </li>
+                <li style="min-width: 5rem"><a href="https://www.pinterest.com/dokikeropi/_saved/">Pinterest</a></li>
+                <li style="min-width: 5rem"><a
+                    href="https://open.spotify.com/user/351xve2kujns3qd1piwp26hln?si=64bf16965e484102&nd=1">Spotify</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Icons -->
+        <div class="link-icon body--flex-item">
+          <a href="https://toyhou.se/goblinkimg/art">
+            <img class="link-icon__item" src="assets/image/icon/icon--gallery-folder.png" title="View Art Gallery"
+              alt="Art Gallery Icon" width="80" height="80">
+          </a>
+          <a href="#commission-info">
+            <img class="link-icon__item" src="assets/image/icon/icon--commission-info.png" title="View Commission Info"
+              alt="Commission Info Icon" width="80" height="80">
+          </a>
+          <input onclick="openLink(funLinks)" type="image" src="assets/image/icon/icon--party-hat.png"
+            title="Go to a fun website" alt="Fun Websites Icon" width="80" height="80">
+          <a href="#behind-the-site">
+            <img class="link-icon__item" src="assets/image/icon/icon--behind-the-site.png"
+              title="About the site's creation" alt="Site's Creation Icon" width="80" height="80">
+          </a>
+        </div>
+        <!-- Commission Info -->
+        <div class="window window--color-neon-turquoise is-bright glass" id="commission-info" role="dialog"
+          aria-labelledby="dialog-title" style="width: 600px">
+          <div class="title-bar">
+            <div class="splitcontent">
+              <img class="flex-one" style="margin-right: 0.3rem" src="assets/image/icon/icon--commission-info.png"
+                alt="Commission Info Window Icon" width="16" height="16">
+              <div class="title-bar-text" id="dialog-title">Commission Info</div>
+            </div>
+            <div class="title-bar-controls">
+              <button aria-label="Close" onclick="history.back()"></button>
+            </div>
+          </div>
+          <!-- TODO(Kal): Put this in a config -->
+          <div class="window-body" x-data="commissionSelect">
+            <div class="splitcontent">
+              <div>
+                <fieldset class="fieldset__commission-body-part-select">
+                  <div class="field-row">Select body part type:</div>
+                  <div class="field-row">
+                    <input x-model="body_part__select" id="radio-fullbody" type="radio" value="Fullbody"
+                      name="commission__body-part" autocomplete="off">
+                    <label for="radio-fullbody">Fullbody</label>
+                  </div>
+                  <div class="field-row">
+                    <input x-model="body_part__select" id="radio-halfbody" type="radio" value="Halfbody"
+                      name="commission__body-part" autocomplete="off">
+                    <label for="radio-halfbody">Halfbody</label>
+                  </div>
+                  <div class="field-row">
+                    <input x-model="body_part__select" id="radio-icon" type="radio" value="Icon"
+                      name="commission__body-part" autocomplete="off" checked="checked">
+                    <label for="radio-icon">Icon</label>
+                  </div>
+                </fieldset>
+                <fieldset class="fieldset__commission-type-select">
+                  <div class="field-row">Select commission type:</div>
+                  <div class="field-row">
+                    <input x-model="commission_type__select" id="radio-regular" type="radio" value="Regular (SAI)"
+                      name="commission__type" autocomplete="off" checked="checked">
+                    <label for="radio-regular">Regular (SAI)</label>
+                  </div>
+                  <div class="field-row">
+                    <input x-model="commission_type__select" id="radio-mspaint" type="radio" value="MS Paint"
+                      name="commission__type" autocomplete="off">
+                    <label for="radio-mspaint">MS Paint</label>
+                  </div>
+                </fieldset>
+                <fieldset class="fieldset__multi_character-select" style="margin: 0">
+                  <div class="field-row">Do you want multiple characters?</div>
+                  <div class="field-row">
+                    <input x-model="multi_character__select" id="checkbox-multiple" type="checkbox" autocomplete="off">
+                    <label for="checkbox-multiple">I want multiple characters</label>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="slideshow-container" x-data="slideshow" x-timeout:2000="changeSlides">
+                <img :src="changeSlides" style="height: 20em;" />
+              </div>
+            </div>
+
+            <p>
+              So you want a <span x-text="commission_type__select"></span> style <span
+                x-text="body_part__select"></span><span x-show="multi_character__select"> with
+                multiple characters</span>? it starts at
+              <span x-text="commissionInfo.commission_price"></span>USD
+            </p>
+          </div>
+          <footer style="text-align: right">
+            <button onclick="history.back()">OK</button>
+          </footer>
+        </div>
+        <!-- Behind the Site -->
+        <div class="window window--color-neon-turquoise is-bright glass" id="behind-the-site" role="dialog"
+          aria-labelledby="dialog-title" style="width: 600px">
+          <div class="title-bar">
+            <div class="splitcontent">
+              <img class="flex-one" style="margin-right: 0.3rem" src="assets/image/icon/icon--behind-the-site.png"
+                alt="Behind the Site Window Icon" width="16" height="16">
+              <div class="title-bar-text" id="dialog-title">Behind the Site</div>
+            </div>
+            <div class="title-bar-controls">
+              <button aria-label="Close" onclick="history.back()"></button>
+            </div>
+          </div>
+          <div class="window-body">
+            <p>
+              This website was created by Kaleidosium in her
+              spare time with Cooper's feedback and cooperation.
+            </p>
+            <div class="splitcontent">
+              <div class="flex-one">
+                <p>
+                  The following frameworks and libraries were used:
+                </p>
+                <ul>
+                  <li>
+                    <a href="https://khang-nd.github.io/7.css/">7.css</a>
+                  </li>
+                  <li>
+                    <a href="https://alpinejs.dev/">Alpine.js</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/csstools/sanitize.css">Sanitize.css</a>
+                  </li>
+                </ul>
+                <p>
+                  Special thanks to the contributors of those libraries, And also to @pixel_brush and @ashie404.
+                </p>
+              </div>
+              <span>
+                <img src="assets/image/icon/icon--daniakalei.png" alt="Behind the Site's Creation" width="100"
+                  height="100">
+                <div role="tooltip"> Check out my website <a href="https://kaleidosium.github.io/">here!</a></div>
+              </span>
+            </div>
+          </div>
+          <footer style="text-align: right">
+            <button onclick="history.back()">OK</button>
+          </footer>
+        </div>
+        <!-- Guestbook -->
+        <div class="window window--color-neon-turquoise is-bright glass" id="guestbook-iframe" role="dialog"
+          aria-labelledby="dialog-title">
+          <div class="title-bar">
+            <div class="splitcontent">
+              <img class="flex-one" style="margin-right: 0.3rem" src="assets/image/icon/icon--guestbook.png"
+                alt="Guestbook Window Icon" width="16" height="16">
+              <div class="title-bar-text" id="dialog-title">Guestbook</div>
+            </div>
+            <div class="title-bar-controls">
+              <button aria-label="Close" onclick="history.back()"></button>
+            </div>
+          </div>
+          <div class="window-body">
+            <iframe id="inlineFrameGuestbook" title="Guestbook" width="500px" height="500px"
+              style="text-rendering: optimizeLegibility;" src="https://goblincave.123guestbook.com/">
+            </iframe>
+          </div>
+          <footer style="text-align: right">
+            <button onclick="history.back()">OK</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

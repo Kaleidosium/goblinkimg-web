@@ -1,0 +1,124 @@
+/*  
+ * Sanitize.css imports for normalization
+ */
+@import url("https://unpkg.com/sanitize.css");
+@import url("https://unpkg.com/sanitize.css/typography.css");
+@import url("https://unpkg.com/sanitize.css/reduce-motion.css");
+
+/* TODO(Kal): Rewrite the entire CSS in proper BEM */
+
+html,
+body {
+  height: 100%;
+  display: grid;
+}
+
+center {
+  margin: 0 auto;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-left {
+  display: flex;
+  justify-content: left;
+}
+
+.body--bg {
+  background-image: url("assets/image/bg.gif");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.body--center-hv {
+  margin: auto;
+}
+
+.body__grid-wrapper {
+  display: inline-grid;
+  grid-column-gap: 0;
+  grid-row-gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+}
+
+.body__first-row {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+
+.body__second-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.body--flex-item {
+  display: flex;
+}
+
+.body--padding {
+  padding: 5rem 0;
+}
+
+.short-bio--padding {
+  padding: 1rem 0;
+}
+
+.link-icon {
+  display: flex;
+  margin: 0 -12px;
+  justify-items: center;
+  align-items: center;
+}
+
+.link-icon__item {
+  margin: 0 12px;
+}
+
+.window--color-neon-turquoise::before,
+.window--color-neon-turquoise > .title-bar {
+  background-color: #61fad5;
+}
+
+.splitcontent {
+  display: flex;
+  align-content: right;
+}
+
+.splitcontent .flex-one {
+  flex: 1;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.image-slides {
+  display: none;
+}
+
+.numbertext {
+  text-align: center;
+}
+
+#desktop-buddy {
+  position: relative;
+  padding: 0;
+  z-index: 2;
+  max-height: 16vh; 
+  width: auto;
+  left: 5vw;
+  top: 1vh;
+}
