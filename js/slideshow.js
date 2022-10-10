@@ -122,7 +122,7 @@ document.addEventListener("alpine:init", () => {
       let localIndex = this.slideIndex % this.slides.length;
 
       if (
-        !urlExists(
+        urlExists(
           window.location.origin +
             "/" +
             pathname.concat(this.slides[localIndex])
@@ -136,8 +136,10 @@ document.addEventListener("alpine:init", () => {
 });
 
 function urlExists(url) {
-  const http = new XMLHttpRequest();
-  http.open("HEAD", url, false);
-  http.send();
-  return http.status !== 404;
+  fetch(url, { method: "HEAD" }).then((res) => {
+    if (!res.ok) {
+      return false;
+    }
+    return true;
+  });
 }
