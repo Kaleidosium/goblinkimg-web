@@ -122,24 +122,22 @@ document.addEventListener("alpine:init", () => {
       let localIndex = this.slideIndex % this.slides.length;
 
       if (
-        urlExists(
+        urlExistsXHR(
           window.location.origin +
             "/" +
             pathname.concat(this.slides[localIndex])
         )
       ) {
-        return pathnameBase.concat("placeholder/SORRY.png");
+        return pathname.concat(this.slides[localIndex]);
       }
-      return pathname.concat(this.slides[localIndex]);
+      return pathnameBase.concat("placeholder/SORRY.png");
     },
   }));
 });
 
-function urlExists(url) {
-  fetch(url, { method: "HEAD" }).then((res) => {
-    if (!res.ok) {
-      return false;
-    }
-    return true;
-  });
+function urlExistsXHR(url) {
+  const http = new XMLHttpRequest();
+  http.open("HEAD", url, false);
+  http.send();
+  return http.status !== 404;
 }
