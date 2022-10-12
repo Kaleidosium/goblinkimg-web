@@ -15,16 +15,22 @@
   <link rel="shortcut-icon" href="favicon.ico">
 
   <!-- External JS and CSS -->
-  <script defer src="https://unpkg.com/@victoryoalli/alpinejs-timeout@1.0.0/dist/timeout.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/@victoryoalli/alpinejs-timeout@1.0.0/dist/timeout.min.js"></script>
+
   <link rel="stylesheet" href="https://unpkg.com/7.css" />
+
+  <link rel="stylesheet" href="https://unpkg.com/sanitize.css" />
+  <link rel="stylesheet" href="https://unpkg.com/sanitize.css/typography.css" />
+  <link rel="stylesheet" href="https://unpkg.com/sanitize.css/reduce-motion.css" />
 
   <!-- Internal JS and CSS -->
   <script src="js/tabsselect.js"></script>
   <script src="js/commissionselect.js"></script>
   <script src="js/openlink.js"></script>
   <script src="js/slideshow.js"></script>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/media.css" />
 </head>
 
 <!-- TODO(Kal): Get rid of Inline Styles! -->
@@ -71,14 +77,14 @@
                 <!-- TODO(Kal): Put this in a config -->
                 <section class="tabs" x-data="tabsSelect()">
                   <menu class="tabs__select" x-ref="tabsSelect" role="tablist" aria-label="Tabs Template">
-                    <button role="tab" aria-controls="tab--home" aria-selected="true">
+                    <button role="tab" id="tab--home" aria-controls="tab--home" aria-selected="true">
                       Home
                     </button>
-                    <button role="tab" aria-controls="tab--byf">BYF</button>
-                    <button role="tab" aria-controls="tab--triggers">Triggers</button>
-                    <button role="tab" aria-controls="tab--interests">Interests</button>
-                    <button role="tab" aria-controls="tab--likes-hobbies">Likes and Hobbies</button>
-                    <button role="tab" aria-controls="tab--faq">FAQ</button>
+                    <button role="tab" id="tab--byf-faq" aria-controls="tab--byf-faq">BYF & FAQ</button>
+                    <button role="tab" id="tab--triggers" aria-controls="tab--triggers">Triggers</button>
+                    <button role="tab" id="tab--interests" aria-controls="tab--interests">Interests</button>
+                    <button role="tab" id="tab--likes-hobbies" aria-controls="tab--likes-hobbies">Likes &
+                      Hobbies</button>
                   </menu>
                   <article x-cloak role="tabpanel" id="tab--home">
                     <p><b>WELCOME TO THE COOPZONE!!!!</b></p>
@@ -127,7 +133,7 @@
                     </p>
 
                   </article>
-                  <article x-cloak role="tabpanel" id="tab--byf" hidden>
+                  <article x-cloak role="tabpanel" id="tab--byf-faq" hidden>
                     <p>
                       <b>BEFORE YOU FOLLOW!!</b>
                     </p>
@@ -146,6 +152,11 @@
                       <li>anti-neo pronouns / neo genders, they arent hurting anyone dude</li>
                       <li>please be respectful.</li>
                     </ul>
+                    <p><b>FAQ:</b></p>
+                    <p>
+                      art tablet is an intous pro15, i draw in MS paint and paint tool sai and occasionally clip
+                      studio!! idk if theres anythign else i can say lololololol
+                    </p>
                   </article>
                   <article x-cloak role="tabpanel" id="tab--triggers" hidden>
                     <p><b>PLEASE TRIGGER TAG:</b></p>
@@ -157,12 +168,6 @@
                       <li>autism discourse</li>
                       <li>lesbian discourse</li>
                     </ul>
-                  </article>
-                  <article x-cloak role="tabpanel" id="tab--faq" hidden>
-                    <p>
-                      art tablet is an intous pro15, i draw in MS paint and paint tool sai and occasionally clip
-                      studio!! idk if theres anythign else i can say lololololol
-                    </p>
                   </article>
                 </section>
               </div>
@@ -178,8 +183,8 @@
       </div>
 
       <div class="body body__second-row 7css">
-        <!-- Links Window -->
         <div class="--flex-item">
+          <!-- Links Window -->
           <div class="window window__links window-color--neon-turquoise glass 7css">
             <div class="title-bar 7css">
               <div class="--splitcontent">

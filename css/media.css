@@ -1,0 +1,87 @@
+@media screen and (max-width: 1000px) {
+  .--flex-item {
+    flex-wrap: wrap;
+  }
+  .link-icon {
+    padding-top: 1rem;
+    justify-content: space-around;
+  }
+  .window__links {
+    width: 730px;
+    max-width: 100%;
+  }
+  .window-links {
+    width: 730px;
+    max-width: 100%;
+    padding-left: 2rem;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .window__profile {
+    width: 100vw;
+  }
+  .window__links {
+    width: 100vw;
+  }
+  p,
+  a,
+  li,
+  button,
+  label {
+    font-size: 1.1rem;
+  }
+  .body__second-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+  }
+  .window__commission-info,
+  .window__behind-the-site {
+    width: 100%;
+    max-width: 100%;
+  }
+  .window-links__link-item {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+    list-style-type: none;
+  }
+  .link-icon {
+    display: flex;
+    width: 100vw;
+    justify-items: center;
+    align-items: center;
+  }
+  .title-bar-controls {
+    display: none;
+  }
+  .short-bio__icon {
+    height: 110px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .link-icon {
+    flex-wrap: wrap;
+  }
+  .short-bio__title {
+    font-size: 2rem;
+    word-wrap: break-word;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  #tab--interests {
+    display: none;
+  }
+  #tab--likes-hobbies {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .body__second-row {
+    padding-bottom: 1rem;
+  }
+}
