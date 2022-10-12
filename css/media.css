@@ -53,9 +53,6 @@
     justify-items: center;
     align-items: center;
   }
-  .title-bar-controls {
-    display: none;
-  }
   .short-bio__icon {
     height: 110px;
   }
