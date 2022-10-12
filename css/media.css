@@ -69,10 +69,10 @@
 }
 
 @media screen and (max-width: 360px) {
-  #tab--interests {
+  #tab-id--interests {
     display: none;
   }
-  #tab--likes-hobbies {
+  #tab-id--likes-hobbies {
     display: none;
   }
 }
