@@ -15,7 +15,7 @@ const funLinks = [
   "zombo.com",
 ];
 
-const openLink = function (links) {
+const openLinksArray = function (links) {
   // get a random number between 0 and the number of links
   // and round it, so it can be used as array index
   const randIdx = parseInt(Math.random() * links.length, 10);

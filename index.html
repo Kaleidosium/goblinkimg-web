@@ -15,7 +15,6 @@
   <link rel="shortcut-icon" href="favicon.ico">
 
   <!-- External JS and CSS -->
-  <script defer src="https://unpkg.com/@victoryoalli/alpinejs-timeout@1.0.0/dist/timeout.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   <link rel="stylesheet" href="https://unpkg.com/7.css" />
@@ -26,9 +25,7 @@
 
   <!-- Internal JS and CSS -->
   <script src="js/tabsselect.js"></script>
-  <script src="js/commissionselect.js"></script>
   <script src="js/openlink.js"></script>
-  <script src="js/slideshow.js"></script>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/media.css" />
 </head>
@@ -62,7 +59,7 @@
             <div class="window-body__wrapper">
               <div class="short-bio">
                 <div class="short-bio--padding --flex-left">
-                  <input class="short-bio__icon" onclick="openLink(musicLinks)" type="image"
+                  <input class="short-bio__icon" onclick="openLinksArray(musicLinks)" type="image"
                     src="assets/image/icon/icon--goblinkimg.png" title="Open Random Song" alt="GoblinKimg's Avatar"
                     width="80px" height="80px" />
                   <!-- TODO(Kal): Put this in a config -->
@@ -199,7 +196,6 @@
               </div>
             </div>
             <div class="window-body 7css">
-              <!-- FIXME(Kal): Inline Styles https://stackoverflow.com/questions/63699559/how-to-make-a-responsive-horizontal-list -->
               <ul class="window-links">
                 <li class="window-links__link-item"><a href="https://twitter.com/goblinkimg">Twitter</a></li>
                 <li class="window-links__link-item"><a href="https://www.twitch.tv/goblinkimg">Twitch</a></li>
@@ -224,11 +220,11 @@
               <img class="link-icon__item" src="assets/image/icon/icon--gallery-folder.png" title="View Art Gallery"
                 alt="Art Gallery Icon" width="80px" height="80px">
             </a>
-            <a href="#commission-info">
+            <a href="https://artistree.io/request/goblinkimg">
               <img class="link-icon__item" src="assets/image/icon/icon--commission-info.png"
-                title="View Commission Info" alt="Commission Info Icon" width="80px" height="80px">
+                title="Request a Commission" alt="Commission Info Icon" width="80px" height="80px">
             </a>
-            <input class="link-icon__item" onclick="openLink(funLinks)" type="image"
+            <input class="link-icon__item" onclick="openLinksArray(funLinks)" type="image"
               src="assets/image/icon/icon--party-hat.png" title="Go to a fun website" alt="Fun Websites Icon"
               width="80px" height="80px">
             <a href="#behind-the-site">
@@ -238,84 +234,6 @@
           </div>
         </div>
 
-        <!-- Commission Info -->
-        <div class="window window__commission-info window-color--neon-turquoise is-bright glass 7css"
-          id="commission-info" role="dialog" aria-labelledby="dialog-title--commission-info">
-          <div class="title-bar 7css">
-            <div class="--splitcontent">
-              <img class="window-icon --flex-one" src="assets/image/icon/icon--commission-info.png"
-                alt="Commission Info Window Icon" width="16" height="16">
-              <div class="title-bar-text 7css" id="dialog-title--commission-info">Commission Info</div>
-            </div>
-            <div class="title-bar-controls 7css">
-              <button aria-label="Close" onclick="history.back()"></button>
-            </div>
-          </div>
-          <!-- TODO(Kal): Put this in a config -->
-          <div class="window-body 7css" x-data="commissionSelect">
-            <div class="--splitcontent">
-              <div class="fieldset__commission-options">
-                <fieldset class="fieldset-options__commission-body-part-select">
-                  <div class="field-row 7css">
-                    <p>Select body part type:</p>
-                  </div>
-                  <div class="field-row 7css">
-                    <input x-model="body_part__select" id="radio-fullbody" type="radio" value="Fullbody"
-                      name="commission__body-part" autocomplete="off">
-                    <label for="radio-fullbody">Fullbody</label>
-                  </div>
-                  <div class="field-row 7css">
-                    <input x-model="body_part__select" id="radio-halfbody" type="radio" value="Halfbody"
-                      name="commission__body-part" autocomplete="off">
-                    <label for="radio-halfbody">Halfbody</label>
-                  </div>
-                  <div class="field-row 7css">
-                    <input x-model="body_part__select" id="radio-icon" type="radio" value="Icon"
-                      name="commission__body-part" autocomplete="off" checked="checked">
-                    <label for="radio-icon">Icon</label>
-                  </div>
-                </fieldset>
-                <fieldset class="fieldset-options__commission-type-select">
-                  <div class="field-row 7css">
-                    <p>Select commission type:</p>
-                  </div>
-                  <div class="field-row 7css">
-                    <input x-model="commission_type__select" id="radio-regular" type="radio" value="Regular (SAI)"
-                      name="commission__type" autocomplete="off" checked="checked">
-                    <label for="radio-regular">Regular (SAI)</label>
-                  </div>
-                  <div class="field-row 7css">
-                    <input x-model="commission_type__select" id="radio-mspaint" type="radio" value="MS Paint"
-                      name="commission__type" autocomplete="off">
-                    <label for="radio-mspaint">MS Paint</label>
-                  </div>
-                </fieldset>
-                <fieldset class="fieldset-options__multi_character-select" style="margin: 0;">
-                  <div class="field-row 7css">
-                    <p>Do you want multiple characters?</p>
-                  </div>
-                  <div class="field-row 7css">
-                    <input x-model="multi_character__select" id="checkbox-multiple" type="checkbox" autocomplete="off">
-                    <label for="checkbox-multiple">I want multiple characters</label>
-                  </div>
-                </fieldset>
-              </div>
-              <div class="slideshow-container" x-data="slideshow" x-timeout:1500="changeSlides">
-                <img :src="changeSlides" class="image-slides" width="300px" height="300px" />
-              </div>
-            </div>
-
-            <p>
-              So you want a <span x-text="commission_type__select"></span> style <span
-                x-text="body_part__select"></span><span x-show="multi_character__select"> with
-                multiple characters</span>? it starts at
-              <span x-text="commissionInfo.commission_price"></span>USD
-            </p>
-          </div>
-          <footer class="window-commission-info --align-right">
-            <button onclick="history.back()">OK</button>
-          </footer>
-        </div>
         <!-- Behind the Site -->
         <div class="window window__behind-the-site window-color--neon-turquoise is-bright glass 7css"
           id="behind-the-site" role="dialog" aria-labelledby="dialog-title--behind-the-site">
