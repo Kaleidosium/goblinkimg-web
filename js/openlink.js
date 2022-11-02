@@ -1,20 +1,6 @@
 // Based on https://stackoverflow.com/a/73916429/10916748
 "use strict";
 
-const musicLinks = [
-  "youtu.be/gC11HJ99Egs",
-  "youtu.be/AsvhQ-soLdg",
-  "youtu.be/Rm97VG_QIXI",
-  "youtu.be/ahwLFyMZTZw",
-];
-const funLinks = [
-  "theuselessweb.com",
-  "boredbutton.com",
-  "yourethemannowdog.ytmnd.com",
-  "something.com",
-  "zombo.com",
-];
-
 const openLinksArray = function (links) {
   // get a random number between 0 and the number of links
   // and round it, so it can be used as array index

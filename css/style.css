@@ -110,6 +110,7 @@ body {
 }
 
 .short-bio__title {
+  font-size: 3rem;
   margin: 0;
 }
 
@@ -126,6 +127,10 @@ body {
 .window__profile {
   width: 730px;
   max-width: 100%;
+}
+
+.window-body {
+  padding: 0.3rem;
 }
 
 .window-icon {
